@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uzair-khan-me.github.io/drive-direct-link-generator/sitemap.xml

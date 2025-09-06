@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Free Google Drive Direct Link Generator Online</title>
+  <meta name="description" content="Generate Google Drive direct download links for files and folders instantly. Free online tool, no signup required.">
+  <link rel="canonical" href="https://uzair-khan-me.github.io/drive-direct-link-generator/" />
+</head>
+<body>
+  <h1>Google Drive Direct Link Generator</h1>
+  <p>Paste a Google Drive share link below to get a direct download link.</p>
+  <input id="inputUrl" type="text" placeholder="Paste Google Drive URL">
+  <button onclick="generate()">Generate</button>
+  <div id="result"></div>
+
+  <script>
+    function generate(){
+      const url = document.getElementById('inputUrl').value.trim();
+      let match = url.match(/[-\\w]{25,}/);
+      if(match){
+        const id = match[0];
+        const direct = `https://drive.google.com/uc?export=download&id=${id}`;
+        document.getElementById('result').innerText = direct;
+      } else {
+        document.getElementById('result').innerText = "Invalid URL";
+      }
+    }
+  </script>
+</body>
+</html>
